@@ -1,0 +1,50 @@
+.nav{
+    position: absolute;
+    z-index: 30;
+    top: 50px;
+    background-color: rgba(255, 255, 255, 0.753);
+    padding: 30px 30px 30px 100px;
+    border-radius: 20px;
+    margin-left: -50px;
+    box-shadow:0em 0em 80em rgba(0, 0, 0, 0.33);
+    background-color: white;
+}
+.nav-header{
+    font-size: 20px;
+    font-weight: 900;
+}
+nav{
+    font-size: 18px;
+    margin-left: 15px;
+}
+nav li{
+    padding-top: 10px;
+}
+a:hover
+{
+    font-weight: 700;
+    text-decoration: none;
+}
+a:
+{
+    font-weight: 400;
+}
+.container{
+    top: 240px;
+    position: absolute;
+    margin-left: 10%;
+    width: 80%;
+    box-shadow:0em 0em 80em rgba(0, 0, 0, 0.33);
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+.file{
+    font-size: 50px;
+    position: absolute;
+    text-align: center;
+    width:100%;
+    top: 70px;
+    font-weight: bolder;
+}
