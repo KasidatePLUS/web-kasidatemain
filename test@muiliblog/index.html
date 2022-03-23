@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19</title>
+</head>
+
+<body>
+    <marquee>
+        <div class="covid-container"></div>
+
+    </marquee>
+    วันที่ 22/03/2022 ตั้งแต่เวลา 23:00 น. วันนี้ - 23:00 น. วันพรุ่งนี้ <br /><img src='http://www.tmd.go.th/images/icon/thundershower.gif'>เมฆมาก กับมีฝนฟ้าคะนองร้อยละ 60 ของพื้นที่ และมีฝนตกหนักบางแห่ง อุณหภูมิต่ำสุด 24-26 องศาเซลเซียส อุณหภูมิสูงสุด 31-33 องศาเซลเซียส ลมใต้ ความเร็ว 10-20 กม./ชม. <br /><b>คาดหมายอุณหภูมิ (&deg;C)</b><br />กรุงเทพมหานคร&nbsp; สูงสุด 34&nbsp;&nbsp;ต่ำสุด 24<br />ปทุมธานี&nbsp; สูงสุด 34&nbsp;&nbsp;ต่ำสุด 26<br />สมุทรปราการ&nbsp; สูงสุด 32&nbsp;&nbsp;ต่ำสุด 26<br>
+<script>
+    async function getCovidData() {
+        let url = 'https://covid19.ddc.moph.go.th/api/Cases/today-cases-all';
+        try {
+            let res = await fetch(url);
+            return await res.json();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function renderCovidData() {
+        let covidDairyReport = await getCovidData();
+        let covidsection = '';
+        covidDairyReport.forEach(covidDairyReport => {
+
+            var value = covidDairyReport.txn_date;
+            var s = value.split('-');
+            let yearofcovid = parseInt(s[0]) + 543;
+            let mon_num = parseInt(s[1]);
+            var monthNamesThai = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
+                "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤษจิกายน", "ธันวาคม"];
+            let monofcovid = monthNamesThai[mon_num - 1];
+            let dateofcovid = parseInt(s[2]);
+            let nf = new Intl.NumberFormat('en-US');
+            var value = covidDairyReport.update_date;
+            var t = value.split(' ');
+            let all_time = t[1];
+            var alltime = all_time.split(':');
+            
+            let cheackDatanew_case = covidDairyReport.new_case;
+            let cheackDatatotal_recovered = covidDairyReport.total_recovered;
+            let cheackDatatotal_case = covidDairyReport.total_case;
+            let cheackDatatotal_death = covidDairyReport.total_death;
+            
+            let covidSegment = ``;
+if (cheackDatanew_case == 0 || cheackDatatotal_recovered == 0 || cheackDatatotal_case == 0 || cheackDatatotal_death == 0 ) {
+     covidSegment = `ขณะนี้อยู่ระหว่างการอัพเดตข้อมูลรายงานสถานการณ์โควิด-19 ประจำวัน ขออภัยในความไม่สะดวก`;
+}
+ else {
+     covidSegment = `
+    รายงานสถานการณ์โควิด-19 ประจำวันที่  ${dateofcovid}  ${monofcovid}  ${yearofcovid} 
+    พบผู้ติดเชื้อรายใหม่ ${nf.format(covidDairyReport.new_case)} ราย 
+    หายป่วยในวันนี้เพิ่มขึ้น ${nf.format(covidDairyReport.new_recovered)} ราย 
+    รวมหายป่วยสะสมแล้ว ${nf.format(covidDairyReport.total_recovered - 2168494)} ราย 
+    วันนี้มีรายงานผู้เสียชีวิตจากโควิด-19 แล้ว ทั้งสิ่น ${nf.format(covidDairyReport.new_death)} ราย 
+    รวมเสียชีวิตสะสมแล้ว ${nf.format(covidDairyReport.total_death - 21698)} ราย 
+    โดยในปีนี้มีรายงานผู้ป่วยโควิด-19 สะสม ทั้งสิ้น ${nf.format(covidDairyReport.total_case - 2223435)} ราย 
+    และมีการรายงานจำนวนผู้ป่วยทั้งหมดที่พบในประเทศไทยนับตั้งแต่การระบาดครั้งแรก ${nf.format(covidDairyReport.total_case)} ราย
+    `;
+}
+            covidsection += covidSegment;
+        });
+
+        let covidcontainer = document.querySelector('.covid-container');
+        covidcontainer.innerHTML = covidsection;
+    }
+
+    renderCovidData();
+
+
+</script>
+<style>
+  .covid-container{
+      font-size: large;
+  } 
+    
+    </style>
+</body>
+
+<style>
+  .covid-container{
+      font-size: x-large;
+  } 
+    
+    </style>
+</html>

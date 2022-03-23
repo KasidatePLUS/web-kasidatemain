@@ -1,4 +1,4 @@
-let iturl = 'http://rssfeeds.sanook.com/rss/feeds/sanook/hitech.news.xml';
+let iturl = ''http://rssfeeds.sanook.com/rss/feeds/sanook/hitech.news.xml';
 const textarea_it = document.querySelector('#feed-textarea-it > ul');
 
 feednami.load(iturl)
