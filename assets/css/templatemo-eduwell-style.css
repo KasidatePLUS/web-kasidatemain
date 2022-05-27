@@ -172,18 +172,22 @@ font-family: 'Noto Sans Thai', sans-serif;
 
 .white-button a {
   font-size: 13px;
-  color: #dc8cdb;
-  background-color: #fff;
-  padding: 12px 30px;
+  color: #1c24b4;
+  background-color: rgb(230, 230, 230);
+  font-weight: 800;
+  padding: 12px 20px;
+  margin:  5px 5px;
   display: inline-block;
   border-radius: 5px;
   font-weight: 500;
   text-transform: uppercase;
-  transition: all .3s;
+  transition: all .5s;
 }
 
 .white-button a:hover {
   opacity: 0.9;
+  background-color: rgb(182, 174, 174);
+  border-radius: 10px;
 }
 
 .text-button a {
@@ -240,12 +244,6 @@ section {
   margin-top: 30px;
 }
 
-
-/* 
----------------------------------------------
-header
---------------------------------------------- 
-*/
 .background-header {
   background: rgb(255, 255, 255) !important;
   background: linear-gradient(-145deg, rgb(244, 244, 244) 0%, rgb(189, 186, 186)100%) !important;
@@ -374,7 +372,7 @@ header
 
 .header-area .main-nav .nav li.has-sub ul.sub-menu {
   position: absolute;
-  width: 140px;
+  width: 200px;
   box-shadow: 0 2px 28px 0 rgba(213, 188, 188, 0.495);
   overflow: hidden;
   top: 40px;
@@ -1929,6 +1927,13 @@ body {
   padding: 3px 10px;
   
 }
+
+.scroll-link-section a:hover{
+  border-radius: 30px;
+  font-weight: 900;
+  padding: 3px 25px;
+  transition: .9s ease-in-out;
+}
 .scroll-link-section{
   margin-top: 30px;
   bottom: 10px;
@@ -1936,7 +1941,6 @@ body {
 .scroll-link-section:hover{
   margin-top: 30px;
   bottom: 10px;
-  background-color: chartreuse;
 }
 img.soc{
   height: 100%;

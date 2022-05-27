@@ -59,7 +59,7 @@ figure, header, nav, section, article, aside, footer, figcaption {
   text-height: auto;
   margin: auto;
   width: 70%;
- // border: 3px solid rgb(2, 4, 2);
+  border: 3px solid rgb(2, 4, 2);
   padding: 10px;
   border-bottom-right-radius: 2;
 }
