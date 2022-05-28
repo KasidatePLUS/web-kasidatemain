@@ -1040,11 +1040,12 @@ section.testimonials:after {
 .testimonials .item {
   border-radius: 15px;
   padding: 30px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(252, 251, 251);
   margin: 15px;
   transition: all .3s;
   position: relative;
   z-index: 2;
+  box-shadow: 1px 1px 10px #5e585d1d;
 }
 
 .testimonials .item:hover {
