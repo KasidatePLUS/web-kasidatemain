@@ -2170,7 +2170,7 @@ a.logo-text {
 
 .service-container {
   display: flex;
-  margin: 50px;
+  margin: 10px;
   flex-wrap: wrap;
 }
 
@@ -2254,21 +2254,24 @@ a.logo-text {
 }
 
 .container-footer {
-  background-color: #808080;
+  background-color: #979797;
   height: 150px;
-  padding: 10px;
+  padding: 10px 0px 0px 90px;
   overflow: hidden;
+  border-radius: 0px 100px;
+  margin: 0px 0px 0px -90px;
+  width: 550px;
 }
 
 .container-footer>ul {
   align-items: center;
   display: inline-flex;
-  margin: 0px 30px;
+  margin: 0px 20px;
 }
 
 .container-footer>ul>li {
   padding: auto;
-  margin: 0px 20px;
+  margin: 0px 10px;
   background-color: #232526;
   border-radius: 100px;
   width: 50px;
@@ -2291,5 +2294,4 @@ a.logo-text {
   font-size: 16px;
   margin-top: 10px;
   width: 400px;
-  margin-left: 20px;
 }
