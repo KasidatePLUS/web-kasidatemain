@@ -861,3 +861,6 @@ option{
 	background-color: rgba(70, 17, 97, 0.658);
 	pointer-events:painted;
 }
+.space{
+	height: 200px;
+}
