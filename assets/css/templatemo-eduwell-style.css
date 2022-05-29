@@ -449,7 +449,7 @@ section {
   width: 200px;
   box-shadow: 0 2px 28px 0 rgba(210, 200, 200, 0.495);
   overflow: hidden;
-  top: 40px;
+  top: 50px;
   border-radius: 5px;
   opacity: 0;
   transition: all .3s;
