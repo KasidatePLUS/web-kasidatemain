@@ -2162,10 +2162,11 @@ a.logo-text {
   font-weight: 800;
   color: #ffffff;
   background: linear-gradient(to right,
-      #8543b0, #60b3c8, #8643b0);
+      #8543b0, #413772, #8643b0);
   padding: 2px 6px;
   border-radius: 5px;
   animation: background-slide 100s infinite linear;
+ quotes: inherit;
 }
 
 .service-container {
@@ -2254,27 +2255,27 @@ a.logo-text {
 
 .container-footer {
   background-color: #979797;
-  height: 150px;
-  padding: 10px 0px 0px 90px;
+  height: 110px;
+  padding: 0px 0px 0px 90px;
   overflow: hidden;
-  border-radius: 0px 100px;
+  border-radius: 0px 50px;
   margin: 0px 0px 0px -90px;
-  width: 550px;
+  width: 450px;
 }
 
 .container-footer>ul {
   align-items: center;
   display: inline-flex;
-  margin: 0px 20px;
+  margin: -10px 20px;
 }
 
 .container-footer>ul>li {
   padding: auto;
-  margin: 0px 10px;
+  margin: 0px 5px 0px;
   background-color: #232526;
   border-radius: 100px;
   width: 50px;
-  height: 50px;
+  height: 0px;
   color: azure; 
   padding: 18px 18px;
   height: 300px;
@@ -2285,12 +2286,17 @@ a.logo-text {
 .container-footer>ul>li:hover {
   background-color: #000000;
 }
-.container-footer>ul>li.l-footer{
-    background-color: #cde9f700;
-}
 .container-footer>p.copyright{
   color: azure; 
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 10px;
-  width: 400px;
+  width: 350px;
+}
+em[title]:hover {
+  content: attr(title);
+  position: relative;
+  top: -100%;
+  left: 0;
+  color: #c7eaca;
+  z-index: 300;
 }
