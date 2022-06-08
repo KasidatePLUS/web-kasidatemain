@@ -1,0 +1,94 @@
+html {
+	height: 100%;
+	overflow: hidden;}
+
+body {
+	background: radial-gradient(ellipse at center, #0a0ab2 0%, #091c4c 90%);
+	color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-size: 18px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cubeholder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 150px 0 20px;
+    position: relative;
+    perspective: 800px;
+    z-index: 100;
+  }
+  
+  .second {
+    flex-wrap: wrap;
+    width: 24px;
+  }
+  
+  .cube {
+    width: 12px;
+    height: 12px;
+    background-color: #e1d8ff;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 0 6px -6px;
+    transform: rotateX(90deg);
+    animation: rotate 3.2s infinite cubic-bezier(0.23, 1, 0.28, 1);
+   
+  }
+  
+  .cube:after, .cube:before {
+    content: "";
+    display: block;
+    height: inherit;
+    width: inherit;
+    background-color: inherit;
+    box-shadow: inset 0px 0px 0px 1000px rgba(0, 0, 0, 0.4);
+    transform: rotateX(90deg) translate3d(0, -6px, 6px);
+  }
+  
+  @keyframes rotate {
+    20% {
+      transform: rotateX(0deg);
+    }
+    50% {
+      transform: rotateX(0deg);
+      background-color: #c594ca;
+    }
+    70% {
+      transform: rotateX(-90deg);
+    }
+    100% {
+      transform: rotateX(-90deg);
+    }
+  }
+  .one {
+    animation-delay: 0s;
+    z-index: 3;
+  }
+  
+  .two {
+    animation-delay: 0.25s;
+    z-index: 3;
+  }
+  
+  .three {
+    animation-delay: 0.5s;
+    z-index: 2;
+  }
+  
+  .four {
+    animation-delay: 0.75s;
+    z-index: 1;
+  }
+  
+  .description {
+    letter-spacing: 0.1em;
+  }
