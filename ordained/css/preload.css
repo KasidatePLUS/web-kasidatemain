@@ -30,7 +30,8 @@ body {
   box-shadow: 4px 4px 15px rgba(#000, 0.15);
   position: relative;
   color: #3b1e1e;
-
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.05);
 }
 
 .card .card__container {
@@ -52,7 +53,7 @@ body {
 .card .card__body {
   font-family: 'Kanit', sans-serif;
   font-family: 'Noto Sans Thai', sans-serif;
-  color: #002651;
+  color: #000000;
 }
 
 .card::before {
@@ -69,18 +70,24 @@ body {
 .card::after {
   position: absolute;
   content: attr(data-label);
-  top: 11px;
-  right: -14px;
+  top: 0px;
+  right: 0px;
   padding: 0.5rem;
   width: 10rem;
-  background: #d0204c;
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
   text-align: center;
   font-family: 'Kanit', sans-serif;
   font-family: 'Noto Sans Thai', sans-serif;
   box-shadow: 4px 4px 15px rgba(100, 6, 25, 0.508);
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 40px;
 }
 
 .backbtn {
@@ -91,6 +98,12 @@ body {
   padding: 0.5rem;
   width: 10rem;
   background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
   text-align: center;
   font-family: 'Kanit', sans-serif;
@@ -135,7 +148,13 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   transition: opacity 500ms;
   visibility: visible;
   opacity: 1;
@@ -184,7 +203,40 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background-color: #0445AF;
+  background-color: #e2dfdf90;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 0 20px;
+  font-weight: bold;
+  height: 33.5px;
+  cursor: pointer;
+  line-height: 17.5px;
+  text-align: center;
+  margin: 0;
+  text-decoration: none;
+  border-color: rgb(99, 51, 51);
+  border-width: 3px;
+  border-style: solid;
+}
+.view-all:hover{
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #43434385, #00000082);
+  background: linear-gradient(to right, #43434398, #00000083);
+  color: rgb(255, 235, 235);
+  transition: 0.5s ease-in-out;
+}
+
+.view-canva {
+  all: unset;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
   color: #FFFFFF;
   font-size: 16px;
   border-radius: 30px;
@@ -197,24 +249,10 @@ body {
   margin: 0;
   text-decoration: none;
 }
-
-.view-canva {
-  all: unset;
-  display: inline-block;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background-color: #161b23;
-  color: #FFFFFF;
-  font-size: 16px;
-  border-radius: 30px;
-  padding: 0 20px;
-  font-weight: bold;
-  height: 38.5px;
-  cursor: pointer;
-  line-height: 20.5px;
-  text-align: center;
-  margin: 0;
-  text-decoration: none;
+.view-canva:hover{
+  background-color: #684247;
+  background: -webkit-linear-gradient(to right, #fad6d6, #a97e7e);
+  background: linear-gradient(to right, #e8cfcf, #d59292);
+  color: #000;
+  transition: all 0.5s ease-in-out;
 }
